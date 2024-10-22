@@ -1,0 +1,86 @@
+<h2 class="text-center display-4">Registrati i tuoi dati</h2>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <form [formGroup]="form" class="mb-5">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            formControlName="name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="cognome" class="form-label">Cognome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cognome"
+            formControlName="surname"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="conferma-password" class="form-label"
+            >Conferma la tua Password</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="conferma-password"
+            formControlName="confirmPassword"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="gender" class="form-label">Gender</label>
+          <select id="gender" formControlName="gender" class="form-control">
+            <option value="uomo">Uomo</option>
+            <option value="donna">Donna</option>
+            <option value="altro">Non specificato</option>
+          </select>
+          <span></span>
+        </div>
+        <div class="mb-3">
+          <label for="immagine" class="form-label">Immagine Profilo</label>
+          <input
+            type="file"
+            class="form-control"
+            id="immagine"
+            formControlName="image"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="biografia" class="form-label">Biografia</label>
+          <input
+            type="text-area"
+            class="form-control"
+            id="biografia"
+            formControlName="bio"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            formControlName="userName"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

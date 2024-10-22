@@ -1,0 +1,42 @@
+<h2 class="text-center display-4">Registrati i tuoi dati</h2>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <form class="mb-5" (ngSubmit)="submit(form)" #form="ngForm">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username"
+            ngModel
+            required
+            #userName="ngModel"
+          />
+          <span *ngIf="userName.invalid && userName.touched"
+            >Username obbligatorio!</span
+          >
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            ngModel
+            required
+            #password="ngModel"
+          />
+          <span *ngIf="password.invalid && password.touched"
+            >Password obbligatoria!</span
+          >
+        </div>
+
+        <button type="submit" class="btn btn-outline-success">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
