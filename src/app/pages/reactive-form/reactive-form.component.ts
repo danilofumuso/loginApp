@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -11,14 +11,24 @@ export class ReactiveFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      name: new FormControl(''),
-      surname: new FormControl(''),
-      password: new FormControl(''),
-      confirmPassword: new FormControl(''),
-      gender: new FormControl(''),
+      name: new FormControl('', [Validators.required]),
+      surname: new FormControl('', [Validators.required]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
+      confirmPassword: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
+      gender: new FormControl('', [Validators.required]),
       image: new FormControl(''),
-      bio: new FormControl(''),
-      userName: new FormControl(''),
+      bio: new FormControl('', [Validators.required]),
+      userName: new FormControl('', [Validators.required]),
     });
+  }
+
+  send() {
+    console.log(this.form.value); //mostra i valori inseriti
   }
 }

@@ -79,7 +79,14 @@
           />
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button
+          [disabled]="form.invalid"
+          type="submit"
+          class="btn btn-primary"
+          (click)="send()"
+        >
+          Submit
+        </button>
       </form>
     </div>
   </div>
